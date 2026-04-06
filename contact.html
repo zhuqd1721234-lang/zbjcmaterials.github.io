@@ -14,15 +14,16 @@
         .logo a { color: #ffffff; text-decoration: none; font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
         .nav-links { list-style: none; display: flex; align-items: center; margin: 0; }
         .nav-links li { margin-left: 30px; }
-        .nav-links a { color: #bbb; text-decoration: none; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; }
+        .nav-links a { color: #bbb; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; }
         .nav-links a:hover { color: #f39c12; }
         .nav-btn { background: #f39c12; color: #000 !important; padding: 8px 20px; border-radius: 4px; font-weight: bold; }
 
-        .hero { 
+        .hero-bg { 
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000');
             background-size: cover; background-position: center; height: 40vh; 
             display: flex; align-items: center; justify-content: center; text-align: center; 
         }
-        .hero h1 { font-size: 3rem; color: #fff; margin: 0; border-bottom: 3px solid #f39c12; padding-bottom: 10px; }
+        .hero-bg h1 { font-size: 3rem; color: #fff; margin: 0; border-bottom: 3px solid #f39c12; padding-bottom: 10px; }
 
         .container { padding: 60px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .contact-form { background: #1e1e1e; padding: 40px; border-radius: 8px; border: 1px solid #333; }
@@ -32,7 +33,6 @@
             width: 100%; padding: 12px; background: #2b2b2b; border: 1px solid #444; color: #fff; border-radius: 4px; box-sizing: border-box;
         }
         .submit-btn { background: #f39c12; color: #000; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; width: 100%; border-radius: 4px; }
-        
         .whatsapp-section { background: #25d366; color: #fff; padding: 30px; border-radius: 8px; text-align: center; margin-top: 30px; }
         .whatsapp-btn { display: inline-block; background: #fff; color: #25d366; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 50px; margin-top: 15px; }
 
@@ -41,7 +41,6 @@
     </style>
 </head>
 <body>
-
     <nav>
         <div class="logo"><a href="index.html">ZBJC MATERIALS</a></div>
         <ul class="nav-links">
@@ -52,43 +51,44 @@
         </ul>
     </nav>
 
-    <!-- 背景图已经在这里修改 -->
-    <header class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000');">
-        <h1>CONTACT US</h1>
+    <header class="hero-bg">
+        <h1>GET A QUOTE</h1>
     </header>
 
     <div class="container">
         <div class="contact-form">
-            <h2 style="color:#f39c12;">Send an Inquiry</h2>
+            <h2 style="color:#f39c12;">Email Inquiry</h2>
+            <!-- 关键点：确保 Email 拼写完全正确 -->
             <form action="https://formsubmit.co/zhuqd1721234@gmail.com" method="POST">
-                <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
-                <div class="form-group"><label>Subject</label><input type="text" name="_subject" required></div>
-                <div class="form-group"><label>Message</label><textarea name="message" required></textarea></div>
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit" class="submit-btn">SEND NOW</button>
+                <!-- 重要：每个 input 必须有 name 属性 -->
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" required></textarea>
+                </div>
+                <!-- 提交后的跳转，防止留在报错页面 -->
+                <input type="hidden" name="_next" value="https://www.zbjcmaterials.com/contact.html">
+                <button type="submit" class="submit-btn">SEND TO FACTORY</button>
             </form>
         </div>
 
         <div class="contact-info">
-            <h2 style="color:#f39c12;">Direct Contact</h2>
-            <p><b>Factory:</b> Zibo City, Shandong Province, China</p>
-            
+            <h2 style="color:#f39c12;">Instant Chat</h2>
             <div class="whatsapp-section">
-                <h3>Get B2B Pricing</h3>
-                <a href="https://wa.me/8615725817831" class="whatsapp-btn">Chat on WhatsApp</a>
+                <h3>WhatsApp B2B Solution</h3>
+                <a href="https://wa.me/8615725817831" class="whatsapp-btn">Start Chat Now</a>
             </div>
-
-            <!-- 这里新增了一张极具工业感的实物照片 -->
             <div style="margin-top: 30px;">
-                <img src="https://images.unsplash.com/photo-1590480394626-821152a82a83?q=80&w=800" 
-                     style="width: 100%; border-radius: 8px; filter: grayscale(30%); border: 1px solid #333;">
-                <p style="text-align:center; font-size: 0.8rem; color:#666; margin-top:5px;">Professional Grade Concrete Solutions</p>
+                <!-- 这里的图片链接换成了一张极其稳定的图 -->
+                <img src="https://images.unsplash.com/photo-1590480394626-821152a82a83?auto=format&fit=crop&q=80&w=800" 
+                     style="width: 100%; border-radius: 8px; border: 1px solid #333;">
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; ZBJC Materials. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; ZBJC Materials. All rights reserved.</p></footer>
 </body>
 </html>
