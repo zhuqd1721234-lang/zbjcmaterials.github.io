@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         /* 基础设置 */
-        body { background-color: #121212; color: #cfcfcf; font-family: 'Segoe UI', sans-serif; margin: 0; padding-top: 70px; }
+        body { background-color: #121212; color: #cfcfcf; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
         
-        /* 导航栏样式 - 工业黑金风格 */
+        /* 导航栏 - 修正为透明悬浮感 */
         nav { 
-            background: rgba(20, 20, 20, 0.95); 
+            background: rgba(10, 10, 10, 0.8); /* 半透明黑色 */
+            backdrop-filter: blur(10px); /* 磨砂玻璃效果，非常高级 */
             height: 70px; 
             display: flex; 
             justify-content: space-between; 
@@ -19,44 +20,35 @@
             position: fixed; 
             top: 0; left: 0; right: 0; 
             z-index: 1000; 
-            border-bottom: 2px solid #f39c12;
+            border-bottom: 1px solid rgba(243, 156, 18, 0.3);
         }
-        .logo a { 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-size: 1.5rem; 
-            font-weight: bold; 
-            letter-spacing: 2px; 
-        }
-        .nav-links { list-style: none; display: flex; align-items: center; }
+        .logo a { color: #ffffff; text-decoration: none; font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; align-items: center; margin: 0; }
         .nav-links li { margin-left: 30px; }
-        .nav-links a { 
-            color: #bbb; 
-            text-decoration: none; 
-            transition: 0.3s; 
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
+        .nav-links a { color: #bbb; text-decoration: none; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; }
         .nav-links a:hover { color: #f39c12; }
-        .nav-btn { 
-            background: #f39c12; 
-            color: #000 !important; 
-            padding: 8px 20px; 
-            border-radius: 4px; 
-            font-weight: bold; 
-        }
+        .nav-btn { background: #f39c12; color: #000 !important; padding: 8px 20px; border-radius: 4px; font-weight: bold; }
 
-        /* 首页 Hero 部分 */
+        /* 首页 Hero 部分 - 找回那张漂亮的大图 */
         header { 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/hero.jpg'); 
-            background-size: cover; height: 70vh; 
-            display: flex; align-items: center; justify-content: center; text-align: center; 
+            /* 重新调用那张高清工业风图片 */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000'); 
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed; /* 滚动时图片固定，增加高级感 */
+            height: 100vh; /* 撑满整个屏幕 */
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
         }
-        .hero-text h1 { font-size: 3.5rem; color: #fff; margin: 0; }
-        .hero-text p { color: #f39c12; font-size: 1.2rem; }
+        .hero-text h1 { font-size: 4rem; color: #fff; margin: 0; letter-spacing: 5px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-text p { color: #f39c12; font-size: 1.5rem; margin-top: 20px; font-weight: 300; }
 
-        .container { padding: 80px 10%; text-align: center; }
-        footer { background: #0a0a0a; padding: 40px; text-align: center; border-top: 1px solid #333; }
+        .container { padding: 100px 15%; text-align: center; background: #121212; }
+        h2 { font-size: 2.5rem; color: #fff; border-bottom: 2px solid #f39c12; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        footer { background: #0a0a0a; padding: 60px; text-align: center; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
@@ -76,17 +68,21 @@
     <header>
         <div class="hero-text">
             <h1>ZBJC MATERIALS</h1>
-            <p>High-End Concrete & Paving Solutions</p>
+            <p>Reliable Infrastructure Solutions Since 1998</p>
         </div>
     </header>
 
-    <div class="container">
-        <h2>Welcome to Our Factory</h2>
-        <p>Leading manufacturer of cement products in Zibo, China.</p>
+    <div class="container" id="main-content">
+        <h2>Industrial Concrete Excellence</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8;">
+            Based in Zibo, we are a premier manufacturer of high-strength permeable bricks, 
+            landscape paving, and professional-grade cement pipes. 
+            Our products are engineered for durability and sustainability.
+        </p>
     </div>
 
     <footer>
-        <p>&copy; ZBJC Materials. All rights reserved.</p>
+        <p>&copy; ZBJC Materials. Professional Cement Products Factory.</p>
     </footer>
 
 </body>
